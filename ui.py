@@ -1,21 +1,19 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_groq import ChatGroq
+from langchain_core.messages import HumanMessage, SystemMessage
 
 # Load environment variables
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Groq LLM setup (LangChain wrapper)
-llm = ChatOpenAI(
-    openai_api_key=GROQ_API_KEY,
-    openai_api_base="https://api.groq.com/openai/v1",  # Groq endpoint
-     model_name="llama-3.3-70b-versatile",#Groq model 
+llm = ChatGroq(
+    groq_api_key=GROQ_API_KEY,
+    model_name="llama-3.3-70b-versatile",
     temperature=0.5
 )
-
 # Trusted medical resources
 resources = {
     "CDC": "https://www.cdc.gov",
