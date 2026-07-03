@@ -1,5 +1,12 @@
 streamlit
+<<<<<<< HEAD
 langchain
 langchain-core
 langchain-groq
 python-dotenv
+=======
+langchain==0.3.27
+langchain-core==0.3.74
+langchain-groq==0.3.8
+python-dotenv
+>>>>>>> 5fdf0b87378121c5239de90810408b8c3ffd37c1
